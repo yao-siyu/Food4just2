@@ -3,11 +3,11 @@ Restaurant recommendation for a group of two people
 
 
 ## Business Value
-Which restaurant we should go? It has been a difficult decision to make for two people, especially you're visiting another city or you're planning for important date, and don't want the experience in the restaurant ruin your vacation or big date.
+My insight project is to build such a data platform with a focus on solving the issues for two people using their historical review data.  The Spark collaborative filtering model and established recommendation system are going to be adapted for two (or more) users. This project has the potential to be easily converted to other applications that involve more than one party, e.g., movies and hotels recommendations.
 
 
 ## Engineering Challenge
-1. Recommendation system based on multiple users
+1. Recommendation system for multiple users
 2. find results inside a radius of certain location
 
 
