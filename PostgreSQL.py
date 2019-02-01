@@ -40,14 +40,13 @@ self.writeToDatabase(bu, 'bu', 'overwrite')
 #Convert RDD to dateframe
 from pyspark.sql.types import Row
 
-#here you are going to create a function
-def f(x):
+def RDDToDF(x):
     d = {}
     for i in range(len(x)):
         d[str(i)] = x[i]
     return d
 
 #save predictions to database
-pre = predictions.map(lambda x: Row(**f(x))).toDF()
+pre = predictions.map(lambda x: Row(**RDDToDF(x))).toDF()
 pre.select('0.*', '1')
 self.writeToDatabase(pre, 'pre', 'overwrite')
