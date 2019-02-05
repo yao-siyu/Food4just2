@@ -1,4 +1,4 @@
-# Build the recommendation model using Alternating Least Squares
+# Build the recommendation model using Alternating Least Squares (ALS)
 from pyspark.mllib.recommendation import ALS, MatrixFactorizationModel, Rating
 
 newratingsRDD = newratings.rdd

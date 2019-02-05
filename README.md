@@ -1,4 +1,4 @@
-## Restaurant Picker
+## Food4just2
 Restaurant recommendation for a group of two people
 
 
