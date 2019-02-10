@@ -8,13 +8,13 @@ from flask import url_for
 app = Flask(__name__)
 
 # you can set key as config
-app.config['GOOGLEMAPS_KEY'] = "AIzaSyCVEoiBfMcTq4ogPzlX5hxc02QWYdi10h8"
+app.config['GOOGLEMAPS_KEY'] = "AIzaSyBSEBVoud-UsPk7MO2QT3do1nJJl12KtzU"
 
 # Initialize the extension
 GoogleMaps(app)
 
 # you can also pass the key here if you prefer
-#GoogleMaps(app, key="8JZ7i18MjFuM35dJHq70n3Hx4")
+#GoogleMaps(app, key="AIzaSyBSEBVoud-UsPk7MO2QT3do1nJJl12KtzU")
 
 
 @app.route("/")
@@ -23,9 +23,9 @@ def login():
 		user1 = request.form['user1']
 		user2 = request.form['user2']
 		location = request.form['location']
-		return redirect(url_for('mapview'), user1=user1, user2=user2)
+		return redirect(url_for('mapview'), user1=user1, user2=user2, location=location)
 	else:
-   		return render_template('moviEharmony.html')
+   		return render_template('frontpage.html', user1=user1, user2=user2, location=location)
 
 
 @app.route('/mapview', methods=['POST'])
