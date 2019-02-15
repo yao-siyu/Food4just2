@@ -1,0 +1,142 @@
+<html>
+
+    <head>
+        <title>Food4just2 by Siyu Yao</title>
+        
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSEBVoud-UsPk7MO2QT3do1nJJl12KtzU&callback=myMap"></script> -->
+        <link rel="stylesheet" type="text/css" href="static/css/screen.css">
+        <link rel="stylesheet" type="text/css" href="static/css/css.css">
+        <link rel="stylesheet" href="static/font-awesome/font-awesome.css">
+        <link rel="stylesheet" href="static/collageplus/css/transitions.css">
+        <link rel="stylesheet" href="static/css/bootstrap-slider.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="static/js/bootstrap-slider.js"></script>
+        <script type="text/javascript" src="static/js/index.js"></script>
+        <script type="text/javascript" src="static/collageplus/jquery.collagePlus.min.js"></script>
+        <script type="text/javascript" src="static/collageplus/extras/jquery.removeWhitespace.min.js"></script>
+        <script type="text/javascript" src="static/collageplus/extras/jquery.collageCaption.min.js"></script>
+
+        <script type="text/javascript">
+            $( document ).ready(function() {
+
+            });
+
+            // All images need to be loaded for this plugin to work so we end up waiting for the whole window to load in this example
+            $(window).load(function () {
+                $(document).ready(function(){
+                    collage();
+                    $('.Collage').collagePlus();
+                    // $('.Collage').collageCaption();
+                });
+            });
+
+            // Here we apply the actual CollagePlus plugin
+            function collage() {
+                $('.Collage').collagePlus(
+                {
+                    //'fadeSpeed'     : 2000,
+        		    //'direction'     : 'vertical',
+        		    'effect'          : 'default',		
+        		    'direction'       : 'horizontal',
+                    'targetHeight'    : 100
+                }
+                );
+            };
+
+            // This is just for the case that the browser window is resized
+            var resizeTimer = null;
+            $(window).bind('resize', function() {
+                // hide all the images until we resize them
+                //$('.Collage .Image_Wrapper').css("opacity", 0);
+                // set a timer to re-apply the plugin
+                //if (resizeTimer) clearTimeout(resizeTimer);
+                //resizeTimer = setTimeout(collage, 200);
+            });
+        </script>
+
+        <script src="./static/highmaps/js/highmaps.js"></script>
+        <script src="./static/highmaps/js/modules/data.js"></script>
+        <script src="./static/highmaps/js/modules/exporting.js"></script>
+        <script src="http://code.highcharts.com/mapdata/countries/us/us-all-all.js"></script>
+        <link rel="alternate" type="application/rss+xml" title="Food4just2 by Siyu Yao" href="http://www.moviEharmony.website/rss/">
+        <link rel="canonical" href="http://www.moviEharmony.website/">
+
+
+
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <style>
+            /* Always set the map height explicitly to define the size of the div element that contains the map. */
+            #map {
+                height: 100%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            #description {
+                font-family: Roboto;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            #infowindow-content .title {
+                font-weight: bold;
+            }
+
+            #infowindow-content {
+                display: none;
+            }
+
+            #map #infowindow-content {
+                display: inline;
+            }
+
+            #title {
+                color: #fff;
+                background-color: #4d90fe;
+                font-size: 25px;
+                font-weight: 500;
+                padding: 6px 12px;
+            }
+            #target {
+                width: 345px;
+            }
+
+
+        </style>
+
+    </head>
+
+
+    <body class="home-template">
+
+
+        <header id="site-head" style="background-image: url(static/front2.jpg)">
+            <div class="vertical">
+                <div id="site-head-content" class="inner">
+
+                    <h1 class="blog-title" style="color:white; background-color:darkred;margin-left:20%;margin-right:20%" > <b>Food4just2 </b></h1>
+                    <h2 class="blog-description" style="color:white; background-color:maroon;margin-left:20%;margin-right:20%"> <b> by Siyu Yao</b>,<br>
+                        <b> A Data Engineering Fellow </b>,<br> 
+                        <b> @ Insight Data Science, winter 2019.<b></h2>
+
+                        <a class="btn" href="{{ url_for('restaurant') }}"><b>Restaurant Search</b></a>
+                        <!-- <a class="btn" url="/queryuser/">queryuser</a> -->
+                        <!-- <a class="btn" url="/enterreview/">enterreview</a> -->
+                        <a class="btn" href="{{ url_for('about') }}"><b>About</b></a>
+
+                        <div> 
+                            <p style="color:white;" Food4just2 <br>
+                                A Restaurant Recommendation Engine<br>
+                                that suits the tastes of two people!<br>
+                            </p>
+                        </div>
+                </div>
+            </div>
+        </header>
+
+    </body>
+</html>
