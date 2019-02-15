@@ -1,0 +1,213 @@
+<html>
+
+    <head>
+        <title>Food4just2 by Siyu Yao</title>
+        
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSEBVoud-UsPk7MO2QT3do1nJJl12KtzU&callback=myMap"></script> -->
+        <link rel="stylesheet" type="text/css" href="static/css/screen.css">
+        <link rel="stylesheet" type="text/css" href="static/css/css.css">
+        <link rel="stylesheet" href="static/font-awesome/font-awesome.css">
+        <link rel="stylesheet" href="static/collageplus/css/transitions.css">
+        <link rel="stylesheet" href="static/css/bootstrap-slider.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="static/js/bootstrap-slider.js"></script>
+        <script type="text/javascript" src="static/js/index.js"></script>
+        <script type="text/javascript" src="static/collageplus/jquery.collagePlus.min.js"></script>
+        <script type="text/javascript" src="static/collageplus/extras/jquery.removeWhitespace.min.js"></script>
+        <script type="text/javascript" src="static/collageplus/extras/jquery.collageCaption.min.js"></script>
+
+        <script type="text/javascript">
+            $( document ).ready(function() {
+
+            });
+
+            // All images need to be loaded for this plugin to work so we end up waiting for the whole window to load in this example
+            $(window).load(function () {
+                $(document).ready(function(){
+                    collage();
+                    $('.Collage').collagePlus();
+                    // $('.Collage').collageCaption();
+                });
+            });
+
+            // Here we apply the actual CollagePlus plugin
+            function collage() {
+                $('.Collage').collagePlus(
+                {
+                    //'fadeSpeed'     : 2000,
+        		    //'direction'     : 'vertical',
+        		    'effect'          : 'default',		
+        		    'direction'       : 'horizontal',
+                    'targetHeight'    : 100
+                }
+                );
+            };
+
+            // This is just for the case that the browser window is resized
+            var resizeTimer = null;
+            $(window).bind('resize', function() {
+                // hide all the images until we resize them
+                //$('.Collage .Image_Wrapper').css("opacity", 0);
+                // set a timer to re-apply the plugin
+                //if (resizeTimer) clearTimeout(resizeTimer);
+                //resizeTimer = setTimeout(collage, 200);
+            });
+        </script>
+
+        <script src="./static/highmaps/js/highmaps.js"></script>
+        <script src="./static/highmaps/js/modules/data.js"></script>
+        <script src="./static/highmaps/js/modules/exporting.js"></script>
+        <script src="http://code.highcharts.com/mapdata/countries/us/us-all-all.js"></script>
+        <link rel="alternate" type="application/rss+xml" title="Food4just2 by Siyu Yao" href="http://www.moviEharmony.website/rss/">
+        <link rel="canonical" href="http://www.moviEharmony.website/">
+
+
+
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <style>
+            /* Always set the map height explicitly to define the size of the div element that contains the map. */
+            #map {
+                height: 100%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            #description {
+                font-family: Roboto;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            #infowindow-content .title {
+                font-weight: bold;
+            }
+
+            #infowindow-content {
+                display: none;
+            }
+
+            #map #infowindow-content {
+                display: inline;
+            }
+
+            #title {
+                color: #fff;
+                background-color: #4d90fe;
+                font-size: 25px;
+                font-weight: 500;
+                padding: 6px 12px;
+            }
+            #target {
+                width: 345px;
+            }
+
+
+        </style>
+
+    </head>
+
+
+
+
+
+
+
+
+    <body class="home-template">
+
+        <main class="content" role="main">
+
+            <div style="display: block" class="fixed-nav">
+                <a class="fn-item" url="/Restaurant Search/">Restaurant Search</a>
+                <a class="fn-item" url="/Map View/"><b>Map View</b></a>
+                <a class="fn-item" url="/About/"><b>About</b></a>
+            </div>
+
+            <div class="post-holder">
+                <article item_index="1" class="post" url="/Restaurant Search/">
+                    <header class="post-header">
+                        <h2 class="post-title">Restaurant Search</h2>
+                    </header>
+
+                    <section class="post-content">
+                        Find Good Restaurant for two!<br>
+
+                        <form method="post" action="{{ url_for('mapview') }}">
+                        <table>
+                            <tr>
+                                <td align=center>
+                                    <b>User1 ID: </b><input name="user1" type="text" placeholder="User1"><br>
+                                </td>
+                                <td align=center>
+                                   <b>Power: </b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="100" data-slider-step="5" data-slider-value="50" data-slider-id="PC02" id="P02" data-slider-tooltip="hide" data-slider-handle="round" />
+                                </td>
+                                <td align=center>
+                                    <b>User2 ID: </b><input name="user2" type="text" placeholder="User2"><br>
+                                </td>
+                            </tr>   
+                            <tr>
+                                <td align=center>
+                                    <b>Latitude: </b><input name="la" type="text" placeholder="Latitude"><br>
+                                </td>
+                                <td align=center>
+                                    <b>Longitude: </b><input name="lo" type="text" placeholder="Longitude"><br>
+                                </td>
+                                <td align=center>
+                                    <b>Submit: </b><input value="Submit" type="submit"><br>
+                                </td>
+                            </tr>
+                        </table>
+                        </form>
+
+                    </section>
+                </article>
+
+
+            <div style="border-top-color: rgb(242, 239, 232); left: 6%; display: block;" class="post-after"> </div>
+            </div>
+
+        </main>
+
+
+
+
+
+        <script type="text/javascript">
+
+            $('.Collage').removeWhitespace().collagePlus({
+                'targetHeight' : 100
+            });
+
+            var loadTimer = null;
+
+            var RGBChange = function() {
+            var user1 = document.getElementById("user1").value;
+            //alert(user1);
+            var user2 = document.getElementById("user2").value;
+            //alert(user2);
+            var p02 = document.getElementById("P02").value;
+            //alert(p02);
+            loadthisurl = "/RestaurantSearchrefresh/"+user1+"/"+user2+"/"+p02+"";
+            //alert(loadthisurl);
+            
+            loadTimer = setTimeout(function() {$('.Collage .Image_Wrapper').css("opacity", 0); $('.Collage').load(loadthisurl);} , 500);
+            //$('.Collage').load(loadthisurl);
+            //alert("loading");
+            $('.Collage').collagePlus();
+            };
+
+            var loadthisurl = "";
+
+            var p02 = $('#P02').slider()
+            .on('slideStop', RGBChange)
+            .data('slider');
+
+        </script>
+
+    </body>
+
+</html>
