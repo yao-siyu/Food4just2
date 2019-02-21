@@ -34,7 +34,7 @@ Solution -- save the predictions for the restaurants that are in the same city a
 3. Transfer predictions based on the model to a PostgreSQL database
 4. In a Flask application, use Google Maps API to show the results of queries
 
-https://github.com/yao-siyu/Food4just2/blob/master/Data%20Pipeline.png
+![alt text](https://github.com/yao-siyu/Food4just2/blob/master/Data%20Pipeline.png)
       
 
 ## Data
